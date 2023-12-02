@@ -82,7 +82,7 @@ let speed = 200;
 let started = false;
 
 window.addEventListener("scroll", (e) => {
-  if (window.scrollY >= section_counter.offsetTop - 200) {
+  if (window.scrollY >= section_counter.offsetTop - 300) {
     if (!started) {
       counters.forEach((counter) => {
         function UpdateCounter() {
