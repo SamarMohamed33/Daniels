@@ -1,0 +1,403 @@
+/********************* global ********************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --paragraph-color: #748182;
+  --header-text-color: #343434;
+  --primary-color: #1c1c1c;
+  --background-color: #f7f7f7;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--header-text-color);
+  font-weight: 800 !important;
+}
+h3 {
+  position: relative;
+  width: max-content;
+  margin: auto;
+  margin-bottom: 50px;
+  z-index: 50;
+}
+h3::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-image: url(../imgaes/dots.png);
+  z-index: -1;
+}
+p {
+  color: var(--paragraph-color);
+  font-size: 15px;
+}
+
+/********************* nav ********************************/
+nav {
+  background-color: transparent !important;
+  z-index: 100;
+}
+nav .navbar-brand {
+  font-family: "Montserrat", sans-serif;
+}
+nav .nav-item .nav-link,
+nav .navbar-brand {
+  color: white !important;
+}
+.nav-item .nav-link {
+  position: relative;
+  display: inline-block;
+}
+/** sticky nav start **/
+.sticky {
+  position: fixed !important;
+  background-color: white !important;
+  z-index: 1000;
+  padding: 0;
+}
+.sticky .nav-item .nav-link,
+.sticky .navbar-brand {
+  color: black !important;
+  padding: auto 0 !important;
+}
+.nav-item .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: all 0.5s ease;
+}
+.nav-item .nav-link.first-link::before {
+  background-color: white !important;
+}
+.nav-item .nav-link.active::before {
+  width: 100%;
+}
+.bar-icon {
+  font-size: larger;
+  color: white;
+}
+.sticky .bar-icon {
+  color: #000000;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+/** sticky nav end **/
+/********************* home ********************************/
+#home {
+  height: 100vh;
+  background-image: url(../imgaes/bg.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.header-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.header-overlay .header-icons .header-icon {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+/********************* about ********************************/
+.progress-container {
+  width: 100%;
+  background-color: #f7f7f7;
+}
+.progress-container {
+  font-size: smaller !important;
+  box-shadow: inset 0px 0px 10px -5px #000000;
+}
+.about h6 {
+  z-index: 55;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  margin-bottom: 0;
+}
+.about a {
+  font-size: small;
+}
+.about a:focus {
+  box-shadow: none !important;
+}
+.about .progress-inner {
+  width: 15%;
+  background-color: var(--primary-color) !important;
+  transition: all 2s ease;
+}
+.about .progress-inner::after {
+  content: attr(data-value);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 100%;
+  text-align: end;
+}
+.btn-dark:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+.about img {
+  padding-left: 30px;
+}
+.about .about-img::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background-image: url(../imgaes/dots.png);
+  background-repeat: repeat;
+  bottom: -30px;
+  left: 0;
+  z-index: -1;
+}
+/********************* services ********************************/
+.services {
+  background-color: var(--background-color);
+}
+.services .service-icon {
+  background-color: var(--background-color);
+  width: 70px;
+  height: 70px;
+  transition: all 0.5s ease;
+  margin: auto;
+}
+.services .service-item:hover .service-icon {
+  background-color: var(--primary-color);
+  color: white;
+}
+.services h4 {
+  font-size: large;
+  margin-bottom: 0;
+}
+/**************************** works **************************************/
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: transparent;
+  color: var(--primary-color);
+  position: relative;
+}
+.nav-pills .nav-link.active::before {
+  content: "";
+  position: absolute;
+  bottom: -0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+.nav-pills .nav-link {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+/* works item */
+.works-item {
+  font-size: x-small !important;
+}
+.works-overlay {
+  opacity: 0;
+  transition: all 0.5s ease;
+  top: 20px;
+  z-index: 2;
+}
+.works-item:hover .works-overlay {
+  opacity: 1;
+  top: 0;
+}
+.works-item .works-content .works-icons .works-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 0 3px;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+  z-index: 3;
+}
+.works-item .works-content .works-icons .works-icon:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+.works-item .works-content .works-header {
+  opacity: 0;
+  top: -10px;
+  transition: all ease 0.5s;
+  z-index: 3;
+  font-size: medium;
+  font-weight: 700 !important;
+}
+.works-item .works-content .works-icons {
+  opacity: 0;
+  bottom: -10px;
+  z-index: 3;
+  transition: all ease 0.5s;
+}
+.works-item:hover .works-header {
+  top: 0;
+  opacity: 1;
+}
+.works-item:hover .works-icons {
+  bottom: 0;
+  opacity: 1;
+}
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-dialog img {
+  width: 100%;
+}
+/**************************** clients **************************************/
+.clients {
+  background-color: var(--background-color);
+}
+.clients img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+.carousel-inner {
+  text-align: center !important;
+}
+.carousel-item > div {
+  width: 80%;
+  margin: auto;
+}
+.carousel-item span {
+  font-size: small;
+  font-weight: 600;
+  color: var(--paragraph-color);
+}
+.carousel-indicators button {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: var(--paragraph-color) !important;
+}
+.carousel-control-prev i,
+.carousel-control-next i {
+  color: black !important;
+  font-size: 20px;
+}
+.carousel-control-prev {
+  justify-content: flex-start !important;
+}
+.carousel-control-next {
+  justify-content: flex-end !important;
+}
+/**************************** numbers **************************************/
+.number-item .number-value {
+  font-weight: 900 !important;
+}
+.number-item .number-icon {
+  color: var(--header-text-color) !important;
+}
+.number-item span {
+  font-weight: 600 !important;
+  color: var(--paragraph-color);
+  font-size: 14px;
+}
+/**************************** teams **************************************/
+.team {
+  background-color: var(--background-color);
+}
+.card-body {
+  background-color: #5b5b5b;
+  color: white !important;
+}
+.card-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  font-size: 20px;
+  border: 1px solid #000000;
+  margin: 4px;
+  cursor: pointer;
+}
+.card-icon:hover {
+  background-color: transparent;
+  color: #000000 !important;
+}
+.card .card-image {
+  overflow: hidden;
+}
+.card .card-image img {
+  transition: all ease 0.5s;
+}
+.card .card-image:hover img {
+  transform: scale(1.1);
+}
+.card-overlay {
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.card:hover .card-overlay {
+  transform: rotateY(360deg);
+  opacity: 1;
+}
+/********* contact *************/
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-size: 20px;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
+.contact-item:hover .contact-icon {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+.form-control {
+  background-color: var(--background-color);
+  outline: none !important;
+  border: none !important;
+}
+.form-control:focus {
+  background-color: var(--background-color);
+  box-shadow: none;
+}
+/********* copyright *************/
+.copyright {
+  background-color: var(--primary-color);
+  font-size: 13px;
+}
+@media (max-width: 768px) {
+  .navbar-collapse {
+    width: 100% !important;
+    background-color: white !important;
+  }
+  .navbar-collapse ul li {
+    text-align: center;
+  }
+  nav .nav-item .nav-link {
+    font-size: 13px;
+    color: #000000 !important;
+  }
+  .nav-item .nav-link.first-link::before {
+    background-color: black !important;
+  }
+}
