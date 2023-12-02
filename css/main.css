@@ -107,8 +107,6 @@ nav .navbar-brand {
 }
 .header-overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
 }
 .header-overlay .header-icons .header-icon {
   width: 35px;
