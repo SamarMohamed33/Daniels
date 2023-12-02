@@ -385,7 +385,7 @@ nav .navbar-brand {
   background-color: var(--primary-color);
   font-size: 13px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .navbar-collapse {
     width: 100% !important;
     background-color: white !important;
